@@ -46,6 +46,7 @@ int main()
 	bool beeActive = false;
 	// How fast can the bee fly
 	float beeSpeed = 0.0f;
+
 	// make 3 cloud sprites from 1 texture
 	Texture textureCloud;
 	// Load 1 new texture
@@ -100,10 +101,10 @@ int main()
 		{
 			// How fast is the bee
 			srand((int)time(0));
-			beeSpeed = (rand() % 200) + 200;
+			beeSpeed = (rand() % 200) + 200; // [200, 399]
 			// How high is the bee
 			srand((int)time(0) * 10);
-			float height = (rand() % 350) + 500;
+			float height = (rand() % 500) + 500; // [500, 999]
 			spriteBee.setPosition(2000, height);
 			beeActive = true;
 		}
@@ -156,7 +157,7 @@ int main()
 			cloud2Speed = (rand() % 200);
 			// How high is the cloud
 			srand((int)time(0) * 20);
-			float height = (rand() % 300) - 150;
+			float height = (rand() % 300) - 150; // [-150, 149]
 			spriteCloud2.setPosition(-200, height);
 			cloud2Active = true;
 		}
@@ -180,7 +181,7 @@ int main()
 			cloud3Speed = (rand() % 200);
 			// How high is the cloud
 			srand((int)time(0) * 30);
-			float height = (rand() % 450) - 150;
+			float height = (rand() % 450) - 150; // [-150, 299]
 			spriteCloud3.setPosition(-200, height);
 			cloud3Active = true;
 		}
